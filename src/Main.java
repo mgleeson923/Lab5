@@ -13,16 +13,27 @@ public class Main {
         System.out.println("Time to Throw Some Dice!");
         System.out.print("How many sides should each die have?: ");
         int faces = scnr.nextInt();
+
         do {
             rollNumber = (rollNumber + 1);
             System.out.println("Roll " + rollNumber);
             System.out.println(rollDice(faces) + ", " + rollDice(faces));
 
+            //Asking if user wants to repeat
             System.out.print("Would you like to roll the dice again? (Y/N): ");
             repeat = scnr.next();
-        } while (repeat.equalsIgnoreCase("Y"));
 
+            //validation of repeat clause
+            if (repeat.equalsIgnoreCase("N") | (repeat.equalsIgnoreCase("Y"))) {
+
+            } else {
+                System.out.println("Invalid input. Please try again. (Y/N): ");
+                repeat = scnr.next();
+            }
+
+        } while (repeat.equalsIgnoreCase("Y"));
         System.out.println("Thanks for playing! Good bye!");
+        
     }
 
     //method performing the math with the inputted dice
